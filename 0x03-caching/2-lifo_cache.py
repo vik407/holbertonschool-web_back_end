@@ -43,8 +43,8 @@ class LIFOCache(BaseCaching):
 
     def evict(self):
         """ you must print DISCARD: with the key discarded and following by a
-        new line
+        new line -pop-
         """
-        popped = self.queue.popleft()
+        popped = self.queue.pop()
         del self.cache_data[popped]
         print("DISCARD: " + str(popped))
